@@ -30,17 +30,59 @@ int main() {
 					cin>>n;
 					//liga,tabla
 					listaequipos.push_back(new equipo(n,s));
-					liga* l;
-					l->setNombre1("LIGA BBVA");
-					equipo* e;
-					e->setNombre(n);
-					e->setSkill(s);
-					l->setListae(e);
-					listaliga.push_back(l);
 					
-				}
+					cout<<"equipo Creado"<<endl;
+					
+				}//crear
+				if(m==2){
+					  for(int i = 0; i < listaequipos.size(); i++){
+			          equipo *e = listaequipos[i];
+			          cout <<"------" << "Equipo #" << i <<"------"<<endl;
+			          cout << "Nombre : " <<e->getNombre()<<endl;
+			          cout<<"Skill: "<<e->getSkill()<<endl;
+			          
+			        }
+			        int i = -1;
+			        cout << "Ingrese el indice del equipo que modificara: ";
+			        cin >> i;
+			        equipo *ee = listaequipos[i];
+			        int ss=1+(rand()%99);
+			        string nn;
+			        cout<<"Ingrese nuevo nombre: "<<endl;
+			        cin>>nn;
+			        ee->setNombre(nn);
+			        ee->setSkill(ss);
+			       	
+				}//2
+				if(m==3){
+					 for(int i = 0; i < listaequipos.size(); i++){
+			          equipo *e = listaequipos[i];
+			          cout <<"------" << "Equipo #" << i <<"------"<<endl;
+			          cout << "Nombre : " <<e->getNombre()<<endl;
+			          cout<<"Skill: "<<e->getSkill()<<endl;
+			        }
+					
+				}//3
+				if(m==4){
+					for(int i = 0; i < listaequipos.size(); i++){
+			          equipo *e = listaequipos[i];
+			          cout <<"------" << "Equipo #" << i <<"------"<<endl;
+			          cout << "Nombre : " <<e->getNombre()<<endl;
+			          cout<<"Skill: "<<e->getSkill()<<endl;
+			        }
+			         int carro = -1;
+			        cout << "Ingrese el indice del equipo que eliminara: ";
+			        cin >> carro;
+			        delete listaequipos[carro];
+			        listaequipos.erase(listaequipos.begin()+carro);
+			        break;
+					
+				}//4
 			}//finwhile
 		}//fin menu 1
+		if(menu==2){
+			
+		}//menu2
 	}	//fin while princopal
 
 	return 0;

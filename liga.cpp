@@ -13,6 +13,10 @@ liga::liga(string name,vector<equipo> v1,vector<partido>v2,tabla tt){
 	this->listap=v2;
 	this->t1=tt;
 }
+liga::liga(string nn,equipo e){
+	this->nombre=nn;
+	this->e=e;
+}
 string liga::getNombre1(){
 	return this->nombre;
 }

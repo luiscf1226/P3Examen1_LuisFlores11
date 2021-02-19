@@ -11,12 +11,14 @@ using namespace std;
 class liga {
 	private:
 	string nombre;
+	equipo e;
 	vector <equipo> listae;
 	vector <partido> listap;
 	tabla t1;
 	public:
 	liga();
 	liga(string,vector<equipo>,vector<partido>,tabla);
+	liga(string,equipo);
 	void setNombre1(string n);
 	string getNombre1();
 	void setListae(vector<equipo>);
