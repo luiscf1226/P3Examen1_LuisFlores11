@@ -11,6 +11,16 @@ partido::partido(equipo ee1,equipo ee2,float goles,float goles2,bool b){
 	this->goles2=goles2;
 	this->jugado=b;
 }
+partido::partido(equipo* r1,equipo* r2){
+	this->e11=r1;
+	this->e12=r2;
+}
+equipo* partido::getEquipo111(){
+	return this->e11;
+}
+equipo* partido::getEquipo222(){
+	return this->e12;
+}
 partido::~partido(){
 	//destructor
 }
