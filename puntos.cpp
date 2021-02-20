@@ -5,13 +5,14 @@
 puntos::puntos(){
 	
 }
-puntos::puntos(equipo ee1,int g1,int g2,int pg,int pp,int pe){
+puntos::puntos(equipo* ee1,int g1,int g2,int pg,int pp,int pe,int tt){
 	this->e1=ee1;
 	this->goles_favor=g1;
 	this->goles_contra=g2;
 	this->partido_g=pg;
 	this->partido_p=pp;
 	this->partido_e=pe;
+	this->totalp=tt;
 }
 puntos::~puntos(){
 	//destructor
@@ -52,13 +53,9 @@ void puntos::setTotal(int t){
 int puntos::getTotal(){
 	return this->totalp;
 }
-string puntos::getEquipo(){
-	string s=" ";
-	s+=" "+e1.toString();
-	return s;
-}
-void puntos::setEquipo(equipo eq){
-	this->e1=eq;
+
+equipo* puntos::getEquipaso(){
+	return this->e1;
 }
 string puntos::toString(){
 	string s=" ";

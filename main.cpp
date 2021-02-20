@@ -14,12 +14,15 @@ int main() {
 	vector<liga*> listaliga;
 	vector<partido*> listapar;
 	vector<equipo*> listaequipos2;
+	vector<puntos*> lista9;
+	
 	int menu=0;
 	int total;
 	while(menu!=5) {
 		cout<<"Escoja: "<<endl;
 		cout<<"1. Mantenimiento de Equipos "<<endl<<"2. Generar Jornada"<<endl<<"3. Simular Partido"<<endl<<"4. Impresion"<<endl<<"5. Salir"<<endl;
 		cin>>menu;
+		int par=0;
 		if(menu==1){
 			int m=0;
 			while(m!=5){
@@ -118,6 +121,7 @@ int main() {
 				int m=1;
 				cout<<"partido: "<<m<<endl;
 				cout<<"Equipo: "<<e->getNombre()<<" vs Equipo: "<<e2->getNombre()<<endl;
+				int gc= 0+(rand()%3);
 				int r= -15+(rand()%30);
 				int r2= -15+(rand()%30);
 				int k=e->getSkill();
@@ -126,12 +130,48 @@ int main() {
 				e2->setSkill(k2+r2);
 				if(e->getSkill()>e2->getSkill()){
 					cout<<"El Ganador es: "<<e->getNombre()<<endl;
+					puntos *p;
+					int golesf=0;
+					golesf=e->getSkill()/10;
+					int pg=0;
+					pg++;
+					int tt=0;
+					tt+=3;
+					par++;
+					p=new puntos(e,golesf,gc,pg,0,0,tt);
+					lista9.push_back(p);
+					
 				}else{
 					cout<<"El Ganador es: "<<e2->getNombre()<<endl;
+					puntos *p;
+					int golesf=0;
+					golesf=e2->getSkill()/10;
+					int pg=0;
+					pg++;
+					par++;
+					int tt=0;
+					tt+=3;
+					p=new puntos(e2,golesf,gc,pg,0,0,tt);
+					lista9.push_back(p);
 				}
 				//cout<<r<<endl;
 			}
 			cout<<"FIN DE PARTIDOS"<<endl;
+		}//3
+		if(menu==4){
+			cout<<"TABLA: "<<endl;
+			for(int i=0;i<lista9.size();i++){
+				int n=listaequipos.size();
+				while(n>0){
+					
+				
+				puntos *p=lista9[i];
+				equipo *e=p->getEquipaso();
+				par++;
+				cout<<"Nombre Equipo: "<<e->getNombre()<<endl<<"Partido jugado: "<<par<<endl<<"Partidos Ganados: "<<p->getPartidoG()<<endl<<"Partidos Perdidos: "<<p->getPartidoP()<<endl<<"Partidos Empatados: "<<p->getPartidoE()<<endl<<"Goles Favor: "<<p->getGolesF()<<endl<<"Goles Contra: "<<p->getGolesC()<<endl<<"total puntos: "<<p->getTotal()<<endl<<endl;
+				n--;
+				}
+			}
 		}
 	}	//fin while princopal
 

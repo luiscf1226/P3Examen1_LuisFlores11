@@ -8,7 +8,7 @@
 using namespace std;
 class puntos {
 	private:
-	equipo e1;
+	equipo* e1;
 	int goles_favor;
 	int goles_contra;
 	int partido_g;
@@ -17,8 +17,9 @@ class puntos {
 	int totalp;
 	public:
 	puntos();
-	puntos(equipo,int,int,int,int,int);
+	puntos(equipo*,int,int,int,int,int,int);
 	~puntos();
+	equipo* getEquipaso();
 	void setTotal(int);
 	int getTotal();
 	void setEquipo(equipo);
